@@ -37,3 +37,7 @@ class Template:
         return {"name": self.name,
                 "description": self.description,
                 "lists": [i.save() for i in self.lists]}
+
+class TemplateConstructor:
+    def __init__(self):
+        pass
