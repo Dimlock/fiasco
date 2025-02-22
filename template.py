@@ -25,10 +25,14 @@ class TempList:
 
 
 class Template:
-    def __init__(self, name, description):
+    def __init__(self):
+        self.name = ""
+        self.description = ""
+        self.lists = []
+
+    def set_name_description(self, name, description):
         self.name = name
         self.description = description
-        self.lists = []
 
     def add(self, element):
         self.lists.append(element)
@@ -38,6 +42,7 @@ class Template:
                 "description": self.description,
                 "lists": [i.save() for i in self.lists]}
 
-class TemplateConstructor:
-    def __init__(self):
-        pass
+    def load(self, dict_file):
+        template_dict = dict_file["template"]
+        self.name = template_dict["name"]
+        self.description = template_dict["description"]

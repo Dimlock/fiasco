@@ -1,5 +1,6 @@
 import json
 
+
 def save(file_dict):
     # test_json = {
     #     "template": {
@@ -53,3 +54,8 @@ def save(file_dict):
     with open("test.json", "w", encoding="UTF-8") as f:
         #f.write(json.loads(test_json, indent=4))
         json.dump(file_dict, f, indent=4, ensure_ascii=False)
+
+
+def load(file_path):
+    with open(file_path, "r", encoding="UTF-8") as f:
+        return json.load(f)
