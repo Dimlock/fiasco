@@ -1,6 +1,6 @@
 class Category:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.name = ""
         self.elements = []
 
     def add(self, element):
@@ -10,10 +10,16 @@ class Category:
         return {"name": self.name,
                 "elements": self.elements}
 
+    def load(self, dict_file):
+        self.name = dict_file["name"]
+        for element in dict_file["elements"]:
+            self.add(element)
+        return self
+
 
 class TempList:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.name = ""
         self.categories = []
 
     def add(self, element):
@@ -22,6 +28,12 @@ class TempList:
     def save(self):
         return {"name": self.name,
                 "categories": [i.save() for i in self.categories]}
+
+    def load(self, dict_file):
+        self.name = dict_file["name"]
+        for category in dict_file["categories"]:
+            self.add(Category().load(category))
+        return self
 
 
 class Template:
@@ -43,6 +55,8 @@ class Template:
                 "lists": [i.save() for i in self.lists]}
 
     def load(self, dict_file):
-        template_dict = dict_file["template"]
-        self.name = template_dict["name"]
-        self.description = template_dict["description"]
+        self.name = dict_file["name"]
+        self.description = dict_file["description"]
+        for element in dict_file["lists"]:
+            self.add(TempList().load(element))
+        return self

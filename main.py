@@ -12,21 +12,27 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # cat1 = template.Category("test1")
+    # cat1 = template.Category()
+    # cat1.name = "test1"
     # cat1.add("blabla")
     # cat1.add("aboba")
-    # cat2 = template.Category("test2")
+    # cat2 = template.Category()
+    # cat2.name = "test2"
     # cat2.add("krol")
     # cat2.add("zeliboba")
-    # l1 = template.TempList("First list")
+    # l1 = template.TempList()
+    # l1.name = "First list"
     # l1.add(cat1)
     # l1.add(cat2)
-    # temp1 = template.Template("First template", "я хачю пиццу")
+    # temp1 = template.Template()
+    # temp1.name = "First template"
+    # temp1.description = "я хачю пиццу"
     # temp1.add(l1)
     # print(temp1.save())
     # save_load.save(temp1.save())
 
     t = save_load.load("test.json")
-    print(t["template"]["lists"])
-
+    print(t["lists"])
+    temp = template.Template().load(t)
+    print(temp.lists[0].name)
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

@@ -1,48 +1,25 @@
 {
-    "template": {
-        "name": "тест",
-        "description": "тестовое описание",
-        "lists": {
-            "relations": {
-                "categories": [
-                    {
-                        "name": "имя категории",
-                        "elements": []
-                    },
-                    {
-                        "name": "имя второй категории",
-                        "elements": []
-                    }
-                ]
-            },
-            "other_lists": [
+    "name": "First template",
+    "description": "я хачю пиццу",
+    "lists": [
+        {
+            "name": "First list",
+            "categories": [
                 {
-                    "name": "название другого списка",
-                    "categories": [
-                        {
-                            "name": "имя другой категории",
-                            "elements": []
-                        },
-                        {
-                            "name": "имя второй другой категории",
-                            "elements": []
-                        }
+                    "name": "test1",
+                    "elements": [
+                        "blabla",
+                        "aboba"
                     ]
                 },
                 {
-                    "name": "2nd other list",
-                    "categories": [
-                        {
-                            "name": "2nd list 1st cat",
-                            "elements": []
-                        },
-                        {
-                            "name": "2nd list 2nd cat",
-                            "elements": []
-                        }
+                    "name": "test2",
+                    "elements": [
+                        "krol",
+                        "zeliboba"
                     ]
                 }
             ]
         }
-    }
+    ]
 }
