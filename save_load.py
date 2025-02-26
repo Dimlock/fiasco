@@ -51,8 +51,7 @@ def save(file_dict):
     #     }
     # }
 
-    with open("test.json", "w", encoding="UTF-8") as f:
-        #f.write(json.loads(test_json, indent=4))
+    with open(f"templates/{file_dict["name"]}.json", "w", encoding="UTF-8") as f:
         json.dump(file_dict, f, indent=4, ensure_ascii=False)
 
 

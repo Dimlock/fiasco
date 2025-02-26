@@ -31,8 +31,18 @@ if __name__ == '__main__':
     # print(temp1.save())
     # save_load.save(temp1.save())
 
-    t = save_load.load("test.json")
-    print(t["lists"])
-    temp = template.Template().load(t)
-    print(temp.lists[0].name)
+    # t = save_load.load("test.json")
+    # print(t["lists"])
+    # temp = template.Template().load(t)
+    # print(temp.lists[0].name)
+
+    new_Temp = template.Template()
+    new_Temp.set_name_description("Тестовый для проверки записи", "Здесь будет тестовое описание")
+    new_Temp.add(template.TempList())
+    new_Temp.lists[0].set_name("Первый список")
+    new_Temp.lists[0].add(template.Category())
+    new_Temp.lists[0].categories[0].set_name("Первая категория")
+    new_Temp.lists[0].categories[0].add("Ну и наконец первый элемент")
+    new_Temp.lists[0].categories[0].add("Второй тоже не помешает")
+    save_load.save(new_Temp.save())
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

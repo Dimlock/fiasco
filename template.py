@@ -3,6 +3,9 @@ class Category:
         self.name = ""
         self.elements = []
 
+    def set_name(self, name):
+        self.name = name
+
     def add(self, element):
         self.elements.append(element)
 
@@ -21,6 +24,9 @@ class TempList:
     def __init__(self):
         self.name = ""
         self.categories = []
+
+    def set_name(self, name):
+        self.name = name
 
     def add(self, element):
         self.categories.append(element)
